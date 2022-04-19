@@ -9,6 +9,12 @@ objects: removes the `Optional` type hint and obtains the underlying object.
 is tuned to Python's convention. E.g., `unwrap()` raises an exception instead of
 aborting.
 
+## Install
+
+```shell
+pip install unopt
+```
+
 ## Examples
 
 ```python
