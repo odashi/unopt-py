@@ -1,6 +1,6 @@
 """Core module of unopt."""
 
-from typing import cast, Callable, Optional, TypeVar
+from typing import Callable, Optional, TypeVar, cast
 
 T = TypeVar("T")
 
