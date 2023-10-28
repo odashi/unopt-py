@@ -1,0 +1,75 @@
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "unopt"
+description = "Utility functions to unwrap Optional values"
+readme = "README.md"
+requires-python = ">=3.8, <=3.13"
+license = {text = "Apache Software License 2.0"}
+authors = [
+    {name = "Yusuke Oda", email = "odashi@predicate.jp"},
+]
+keywords = [
+    "none",
+    "optional",
+    "rust",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dynamic = [
+    "version"
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=0.8",
+    "black>=23.10.1",
+    "flake8>=6.1.0",
+    "isort>=5.12.0",
+    "mypy>=1.6.1",
+    "pyproject-flake8>=6.1.0",
+    "pytest>=7.4.3",
+]
+mypy = [
+    "mypy>=1.6.1",
+    "pytest>=7.4.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/odashi/unopt-py"
+"Bug Tracker" = "https://github.com/odashi/unopt-py/issues"
+
+[tool.hatch.build]
+include = [
+    "*.py",
+    "py.typed",
+]
+exclude = [
+    "*_test.py",
+]
+only-packages = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/unopt"]
+
+[tool.hatch.version]
+path = "src/unopt/_version.py"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"
+
+[tool.isort]
+profile = "black"
